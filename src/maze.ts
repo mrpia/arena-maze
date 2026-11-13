@@ -1,5 +1,5 @@
 // The labyrinth: a grid of cells with walls between them, in world units.
-// A new one is built when the game starts and whenever the arena changes size.
+// A new one is built at the start of every round (newGame() in main.ts).
 import { ARENA, MAZE } from './config';
 
 export interface Wall {

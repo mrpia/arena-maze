@@ -1,2 +1,5 @@
 node_modules
 dist
+
+# Screenshots from Playwright MCP browser tests
+.playwright-mcp/
