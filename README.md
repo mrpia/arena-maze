@@ -1,4 +1,4 @@
-# Arena 2P
+# Arena Maze
 
 A starting point for a two-player, same-keyboard game: two characters moving
 around a rectangular arena, seen from above with a slight tilt.

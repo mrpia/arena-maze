@@ -1,4 +1,4 @@
-# Arena 2P
+# Arena Maze
 
 A two-player same-keyboard browser game built in short sessions with a
 10-year-old, who decides what the game should do. Keep it fun to change.
