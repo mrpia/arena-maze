@@ -59,10 +59,10 @@ Press the key left of `1` (`§` on Swiss keyboards, `` ` `` on US ones) to show 
 keys are held. Use it to check that your keyboard registers both players at once:
 many laptop keyboards drop keys when several are held.
 
-Out of ideas? Ideas for this game are in [docs/BACKLOG.md](docs/BACKLOG.md). Themes, twists and
-example prompts for two-player games in general are in arena-starter's
-[IDEAS.md](https://github.com/mrpia/arena-starter/blob/master/IDEAS.md)
-([IDEEN.md](https://github.com/mrpia/arena-starter/blob/master/IDEEN.md) in German).
+Before the labyrinth and the monsters, this was arena-starter: two characters moving around
+an empty arena. Its [IDEAS.md](https://github.com/mrpia/arena-starter/blob/master/IDEAS.md)
+([IDEEN.md](https://github.com/mrpia/arena-starter/blob/master/IDEEN.md) in German) has
+themes, twists and example prompts for two-player games.
 
 ## Views
 

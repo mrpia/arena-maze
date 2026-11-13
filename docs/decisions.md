@@ -135,3 +135,13 @@ arena-race.mrpia.ch.
 - It took about 30 minutes after verifying for HTTPS to work, and for a minute after that some
   requests still got Firebase's generic certificate (see `dev-notes.md`).
 - https://arena-maze.web.app keeps working.
+
+## 9. No "ideas" in the backlog
+
+**Asked (by the adult):** the README's "Out of ideas?" paragraph was outdated; replace it with
+a short note about the arena-starter origin.
+
+- It said ideas for this game are in `docs/BACKLOG.md`. That was copied from arena-race,
+  whose backlog lists game ideas; this one only has open questions and known issues.
+- The note now says what the game was before the labyrinth and the monsters, and still
+  links arena-starter's `IDEAS.md` and `IDEEN.md`.
