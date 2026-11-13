@@ -62,7 +62,7 @@ what the game should do. Keep it fun to change.
   `docs/dev-notes.md` wherever what they say has changed.
 - Merges, pull requests, force-pushes and repo visibility changes need asking first.
 - The repo is public: no secrets and no personal details in commits or docs.
-- The game is online at arena-maze.web.app: `npm run ship` puts `dist/` on the Firebase
+- The game is online at arena-maze.mrpia.ch: `npm run ship` puts `dist/` on the Firebase
   Hosting site `arena-maze` (target `game` in `firebase.json` and `.firebaserc`). Keep the
   target: math-quizz is the default site of the same project, `modern-ally-102412`, and
   arena-race is another site in it. Deploying is outward-facing, so ask first.

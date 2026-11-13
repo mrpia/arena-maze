@@ -121,3 +121,17 @@ can open the online game but can't play.
   github.com/mrpia/arena-maze in a new tab (stubbed in the test), and the page keeps the keys.
 - Found while checking, not changed: the top line of the HUD overlaps in windows narrower
   than about 800 to 960 px (`narrow-hud` in the backlog).
+
+## 8. Online at arena-maze.mrpia.ch
+
+**Asked (by the adult):** the game at its own subdomain, as arena-race is at
+arena-race.mrpia.ch.
+
+- The adult added `arena-maze.mrpia.ch` as a custom domain of the `arena-maze` site in the
+  Firebase console, and at Infomaniak, where the DNS for `mrpia.ch` is, a CNAME `arena-maze`
+  → `arena-maze.web.app`: the same kind of record arena-race has.
+- The certificate is managed by Google (issued by Google Trust Services, the first one valid
+  from 2026-11-13 to 2027-02-11) and renews by itself. `http://` redirects to `https://`.
+- It took about 30 minutes after verifying for HTTPS to work, and for a minute after that some
+  requests still got Firebase's generic certificate (see `dev-notes.md`).
+- https://arena-maze.web.app keeps working.

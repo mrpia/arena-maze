@@ -3,7 +3,7 @@
 A maze game for two players on one keyboard. You run through a labyrinth full of monsters
 and fight them off together with lightning, fire and ice. A new labyrinth every round.
 
-Play it at https://arena-maze.web.app (you need a keyboard).
+Play it at https://arena-maze.mrpia.ch (you need a keyboard).
 
 It grew out of [arena-starter](https://github.com/mrpia/arena-starter), a starting point for
 two-player browser games on one keyboard (TypeScript, Canvas 2D and Vite, no game framework).
@@ -99,8 +99,8 @@ that locally. To share the game, send the link at the top.
 
 ## Putting it online
 
-The game is a static site on Firebase Hosting, at https://arena-maze.web.app. It has its
-own Hosting site, `arena-maze`, inside the Firebase project `modern-ally-102412`, which it
+The game is a static site on Firebase Hosting, at https://arena-maze.mrpia.ch (also
+https://arena-maze.web.app). It has its own Hosting site, `arena-maze`, inside the Firebase project `modern-ally-102412`, which it
 shares with math-quizz and [arena-race](https://github.com/mrpia/arena-race).
 
 ```bash
@@ -117,3 +117,7 @@ Files in `assets/` have a content hash in their name and are cached for a year. 
 is sent with `no-cache`, so the browser asks again on every load and a new deploy shows up
 at once. Without it, Firebase Hosting lets browsers keep `index.html` for an hour, and an old
 copy can point at a bundle that's no longer there.
+
+DNS for `mrpia.ch` is at Infomaniak: `arena-maze` is a CNAME to `arena-maze.web.app`, set up
+in the Firebase console under Hosting → `arena-maze` → custom domains. The certificate is
+managed by Google and renews by itself.

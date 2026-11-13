@@ -45,7 +45,7 @@ fell into. The rules for working on the game are in [CLAUDE.md](../CLAUDE.md).
   can always get away. On the street floor, 🧢 Turbo makes a chasing monster 1.4× as fast for
   1 s every 4 s, but `monster.ts` caps it at the players' speed: the Grumbler, Stalker and
   Sprinter keep pace for that second without catching up. Numbers from the code, not measured.
-- The built game is 49.6 kB, 17.8 kB gzipped: `index.html` and one JS file.
+- The built game is 50.1 kB, 18.1 kB gzipped (after step 7): `index.html` and one JS file.
 
 ## Traps
 
@@ -69,3 +69,11 @@ fell into. The rules for working on the game are in [CLAUDE.md](../CLAUDE.md).
   interactive: the adult runs it in their own terminal.
 - Firebase Hosting gives `index.html` `max-age=3600` unless `firebase.json` says otherwise
   (found in math-quizz). That's why `/` and `/index.html` are `no-cache`.
+- A new custom domain's certificate reaches Google's servers bit by bit. For arena-maze,
+  HTTPS first worked about 30 minutes after verifying, and for about a minute after that the
+  same address still answered some requests with the generic `*.firebaseapp.com` certificate
+  (curl exit code 60). Send a batch of requests before calling it done.
+- `dig` isn't installed. Look up DNS records over HTTPS instead:
+  `curl -s -H 'accept: application/dns-json' 'https://cloudflare-dns.com/dns-query?name=arena-maze.mrpia.ch&type=CNAME'`.
+- This WSL machine has no IPv6 route: `curl -6` fails with exit code 7 for every site,
+  arena-race included. That says nothing about the domain.
