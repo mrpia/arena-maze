@@ -27,12 +27,20 @@ fell into. The rules for working on the game are in [CLAUDE.md](../CLAUDE.md).
   Wait for the `load` state after a reload before reading the page, or `page.evaluate` fails
   with "Execution context was destroyed". Emulation can outlive the run, so close the browser
   afterwards.
+- To test the GitHub link without leaving for github.com, stub it with
+  `page.context().route('https://github.com/**', (r) => r.fulfill({ body: 'stub' }))`, then
+  read the URL of the tab the click opens (`page.waitForEvent('popup')`).
+- To check whether HUD texts collide at some window width, measure them on a spare canvas with
+  the fonts `render.ts` uses (`ctx.measureText`) and sweep the width, instead of taking
+  screenshots at a few sizes.
 
 ## Numbers worth knowing
 
 - Arena: 4800×2700 world units. Labyrinth: 32×18 paths of 150 units, walls 18 thick.
 - In a 1280×800 window with split screen: a 94 px band at the top for the HUD, 60 px on the
-  left for the buttons, and two views of 606×698 px.
+  left for the buttons, and two views of 606×698 px. The band is 94 px in every view.
+- HUD: the monster ability is drawn from y 24 to about 46, the GitHub icon fills y 50 to 86.
+  The control lines go onto two rows below 811 px wide.
 - Players run at 320 units/s. Monsters chase at 120 (Ghost) to 295 (Sprinter), so a player
   can always get away. On the street floor, 🧢 Turbo makes a chasing monster 1.4× as fast for
   1 s every 4 s, but `monster.ts` caps it at the players' speed: the Grumbler, Stalker and

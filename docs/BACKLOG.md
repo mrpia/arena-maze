@@ -31,11 +31,18 @@ which added the keyboard hint instead.
   one thumb, and two players on one phone screen would be cramped.
 - Touch against keyboard wouldn't be equally strong (see `CLAUDE.md`).
 
-## hud-on-phones
+## narrow-hud
 
-Known issue, seen in step 6: in a 390 px wide window the two player names and the monster
-ability in the middle of the top line are drawn on top of each other. It only matters once
-`touch-controls` lets someone play on a phone.
+Known issue, measured with the HUD's fonts in step 7 (called `hud-on-phones` in step 6's
+commit). The HUD was laid out for wide windows:
+
+- Each player's top line (animal, name, lives, powers) runs into the monster ability in the
+  middle below about 796 px wide (street floor, no power cooling down) and below 959 px
+  (Brick builder, all three powers cooling down, so with seconds next to them). That's in
+  Team Yellow's first version; the icon didn't cause it.
+- At 451 px and narrower the control lines reach the GitHub icon, even on two rows.
+- On a 390 px phone the whole top line is a jumble (seen in step 6). That matters most once
+  `touch-controls` lets someone play on a phone.
 
 ## side-buttons-overlap
 

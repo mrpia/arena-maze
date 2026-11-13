@@ -2,6 +2,7 @@ import {
   FLOOR,
   FLOORS,
   type FloorName,
+  GITHUB,
   KEYBOARD_HINT,
   MONSTER,
   MONSTER_COUNT,
@@ -121,6 +122,14 @@ const showFloor = makePicker(
 );
 setFloor(FLOOR);
 showFloor(FLOOR);
+
+// The GitHub icon at the top: the game's code, in a new tab so a game in progress isn't lost.
+const githubLink = document.querySelector<HTMLAnchorElement>('#github')!;
+githubLink.href = GITHUB.url;
+githubLink.title = GITHUB.title;
+githubLink.setAttribute('aria-label', GITHUB.title);
+// Let go of focus, like the buttons, so the keys stay with the game.
+githubLink.addEventListener('click', () => githubLink.blur());
 
 // On phones and tablets the main pointer is a finger: say the game needs a keyboard. A tablet
 // with a keyboard sees it until the first key press.

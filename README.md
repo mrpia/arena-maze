@@ -52,6 +52,9 @@ you can tell them apart. The 🔊 button turns the sound effects off.
 On phones and tablets a box in the middle says you need a keyboard (`KEYBOARD_HINT` in
 `config.ts`); it goes away at the first key press.
 
+The GitHub icon at the top, under the monster ability, opens this repo in a new tab: read
+the code, copy it, or open an issue with a bug or an idea (`GITHUB` in `config.ts`).
+
 Press the key left of `1` (`§` on Swiss keyboards, `` ` `` on US ones) to show which
 keys are held. Use it to check that your keyboard registers both players at once:
 many laptop keyboards drop keys when several are held.

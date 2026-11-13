@@ -96,3 +96,28 @@ can open the online game but can't play.
   x 80 to 310) and at 1024 px (one line); gone after a key press.
 - Not chosen: touch controls. That's a game feature, for the kids to decide (`touch-controls`
   in the backlog).
+
+## 7. A GitHub icon at the top
+
+**Asked (by the adult):** the same GitHub icon as arena-race, linking to the repo.
+
+- arena-race has it in the middle of the top line, but here the monster ability is there.
+  Three places were offered: under the ability, at the bottom of the column of buttons on
+  the left, or next to the ability. The adult picked under the ability: closest to
+  arena-race, and like there it stays apart from the buttons that change the game.
+- Same white rounded square as the buttons, with the GitHub mark inside: an inline SVG from
+  `@primer/octicons` 19.15.1 (`mark-github-16.svg`, MIT), copied from arena-race. It sits at
+  y 50 to 86 px, between the ability text (which ends at about 46) and the game views (which
+  start at 94 in every view).
+- It opens in a new tab, so a game in progress isn't lost, and lets go of focus after a click.
+  The URL and the tooltip ("The game's code on GitHub") are in `GITHUB` in `config.ts`.
+- Fixed in the same step: in windows 716 to 786 px wide, player 2's control line ran under
+  the icon. The control lines now switch to two rows when they would come within 12 px of it
+  (`MIDDLE_ROOM` in `render.ts`): below 811 px wide instead of below 716.
+- Reading and downloading the code needs no account. Opening an issue or forking does, and
+  GitHub accounts are for people aged 13 and up (GitHub Terms of Service, "Account Terms"),
+  so the kids' issues go through an adult.
+- Checked in windows 1280, 1024, 800 and 760 px wide, in all five views. A click opens
+  github.com/mrpia/arena-maze in a new tab (stubbed in the test), and the page keeps the keys.
+- Found while checking, not changed: the top line of the HUD overlaps in windows narrower
+  than about 800 to 960 px (`narrow-hud` in the backlog).

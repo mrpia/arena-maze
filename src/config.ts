@@ -118,6 +118,13 @@ export const COLORS = {
 // mouse), until the first key press.
 export const KEYBOARD_HINT = '⌨️ You need a keyboard to play.';
 
+// The GitHub icon at the top, under the monster ability: opens the game's code in a new tab, to
+// read it, copy it, or suggest an idea. The title shows when the mouse rests on the icon.
+export const GITHUB = {
+  url: 'https://github.com/mrpia/arena-maze',
+  title: "The game's code on GitHub",
+};
+
 // Floors for the floor picker under the 2D/3D button, in the order it shows them.
 // Floors are only paint: players can walk anywhere. Sizes are in world units.
 // Each floor dresses the monsters in a costume: monsterColor is mixed into their body color

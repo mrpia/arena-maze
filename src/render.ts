@@ -387,18 +387,23 @@ function powersText(p: Player): string {
   }).join(' ');
 }
 
+// Room kept free in the middle of the HUD's second line: the 36 px GitHub icon (index.html)
+// and 12 px on each side of it.
+const MIDDLE_ROOM = 36 + 2 * 12;
+
 function drawHud(ctx: CanvasRenderingContext2D, players: Player[], showKeys: string[] | null): void {
   ctx.textBaseline = 'top';
 
-  // In narrow windows the two players' control lines would collide in the middle,
-  // so split each into a "move" line and an "action" line.
+  // In narrow windows the two players' control lines would run into the middle, where the
+  // GitHub icon sits (#github in index.html), so split each into a "move" line and an
+  // "action" line.
   ctx.font = '14px system-ui, sans-serif';
   const oneLine = players.map((p) => {
     const t = controlsText(p.config.controls);
     return `${t.move}   ${t.action}`;
   });
   const widths = oneLine.map((line) => ctx.measureText(line).width);
-  const split = widths[0] + widths[1] + 2 * 24 + 24 > VIEW.width;
+  const split = widths.some((w) => 24 + w > (VIEW.width - MIDDLE_ROOM) / 2);
 
   players.forEach((p, i) => {
     const cfg = p.config;
