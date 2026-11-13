@@ -50,3 +50,9 @@ fell into. The rules for working on the game are in [CLAUDE.md](../CLAUDE.md).
   several are held. The key left of 1 (§ on Swiss keyboards) shows which keys the game sees.
 - A session can't change its working directory to another folder. Start Claude Code in the
   repo folder.
+- The Firebase CLI (`firebase-tools`) is installed globally under nvm's Node 22; switching nvm
+  to another Node version hides it. From a non-interactive shell, run it as
+  `bash -lc 'source ~/.nvm/nvm.sh; firebase …'`. `firebase login --no-localhost` is
+  interactive: the adult runs it in their own terminal.
+- Firebase Hosting gives `index.html` `max-age=3600` unless `firebase.json` says otherwise
+  (found in math-quizz). That's why `/` and `/index.html` are `no-cache`.

@@ -66,3 +66,16 @@ race game went to [arena-race](https://github.com/mrpia/arena-race).
   copies, which the README links to instead.
 - The header comment of `maze.ts` said the labyrinth is rebuilt "whenever the arena changes
   size". The arena has a fixed size; the labyrinth is only built in `newGame()`.
+
+## 5. Online at arena-maze.web.app
+
+**Asked (by the adult):** build the game and put it online the same way as arena-race.
+
+- A third Hosting site, `arena-maze`, in the Firebase project `modern-ally-102412`, next to
+  math-quizz (the project's default site) and arena-race. The free Hosting quota is per
+  project, so the three games share it. The game is a static bundle of 17.8 kB gzipped.
+- `firebase.json` is a copy of arena-race's: it deploys to the target `game`, which
+  `.firebaserc` maps to `arena-maze`, so a deploy can't land on math-quizz. Same cache
+  headers: `assets/**` immutable, `/` and `/index.html` `no-cache`.
+- Deploys are manual with `npm run ship`. No deploy on push.
+- The custom domain comes in the next step.

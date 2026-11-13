@@ -3,6 +3,8 @@
 A maze game for two players on one keyboard. You run through a labyrinth full of monsters
 and fight them off together with lightning, fire and ice. A new labyrinth every round.
 
+Play it at https://arena-maze.web.app (you need a keyboard).
+
 It grew out of [arena-starter](https://github.com/mrpia/arena-starter), a starting point for
 two-player browser games on one keyboard (TypeScript, Canvas 2D and Vite, no game framework).
 Team Yellow built it from there with kids on 2026-11-12. What changed since, and why, is in
@@ -87,4 +89,25 @@ The arena is bigger than the screen (`ARENA` in `config.ts`). `PIXELS_PER_UNIT` 
 
 `npm run build` type-checks and writes the static site to `dist/`. Its files are linked as
 `/assets/…`, so it has to be served from the root of a web server; `npm run preview` does
-that locally.
+that locally. To share the game, send the link at the top.
+
+## Putting it online
+
+The game is a static site on Firebase Hosting, at https://arena-maze.web.app. It has its
+own Hosting site, `arena-maze`, inside the Firebase project `modern-ally-102412`, which it
+shares with math-quizz and [arena-race](https://github.com/mrpia/arena-race).
+
+```bash
+npm i -g firebase-tools          # once per machine
+firebase login --no-localhost    # once per machine
+npm run ship                     # builds, then deploys dist/ to the arena-maze site
+```
+
+`firebase.json` deploys to the target `game`, and `.firebaserc` maps that target to the site
+`arena-maze`. Keep it that way: math-quizz lives on the project's default site, and a config
+without a target could end up there.
+
+Files in `assets/` have a content hash in their name and are cached for a year. `index.html`
+is sent with `no-cache`, so the browser asks again on every load and a new deploy shows up
+at once. Without it, Firebase Hosting lets browsers keep `index.html` for an hour, and an old
+copy can point at a bundle that's no longer there.

@@ -7,7 +7,8 @@
     "dev": "vite --open",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "ship": "npm run build && firebase deploy --only hosting"
   },
   "devDependencies": {
     "typescript": "^7.0.2",

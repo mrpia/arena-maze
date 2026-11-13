@@ -3,3 +3,7 @@ dist
 
 # Screenshots from Playwright MCP browser tests
 .playwright-mcp/
+
+# Firebase CLI
+.firebase/
+*-debug.log
