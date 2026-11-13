@@ -22,6 +22,11 @@ fell into. The rules for working on the game are in [CLAUDE.md](../CLAUDE.md).
 
 - The game starts the moment the page loads, and monsters start moving at once. To look at
   something without being chased, pick 0 with the 👹 button.
+- To test like a phone (the keyboard hint), turn on touch emulation through a CDP session
+  (`Emulation.setTouchEmulationEnabled`), then reload: `pointer: coarse` matches after that.
+  Wait for the `load` state after a reload before reading the page, or `page.evaluate` fails
+  with "Execution context was destroyed". Emulation can outlive the run, so close the browser
+  afterwards.
 
 ## Numbers worth knowing
 

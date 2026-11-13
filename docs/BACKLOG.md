@@ -22,6 +22,21 @@ isn't recorded. Team Yellow's adult could add it to step 1 of the decision log.
 
 "Arena Maze" for now, to match the repo (step 3). The kids may still pick a name of their own.
 
+## touch-controls
+
+Buttons on the screen, so the game can be played on a phone or tablet. Left open in step 6,
+which added the keyboard hint instead.
+
+- Each player has eight keys (four to move, hop, three powers): that's a lot of buttons for
+  one thumb, and two players on one phone screen would be cramped.
+- Touch against keyboard wouldn't be equally strong (see `CLAUDE.md`).
+
+## hud-on-phones
+
+Known issue, seen in step 6: in a 390 px wide window the two player names and the monster
+ability in the middle of the top line are drawn on top of each other. It only matters once
+`touch-controls` lets someone play on a phone.
+
 ## side-buttons-overlap
 
 Known issue, measured in a 1280×800 window: the buttons on the left reach x = 68 px, but the

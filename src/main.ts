@@ -2,6 +2,7 @@ import {
   FLOOR,
   FLOORS,
   type FloorName,
+  KEYBOARD_HINT,
   MONSTER,
   MONSTER_COUNT,
   MONSTER_COUNTS,
@@ -120,6 +121,13 @@ const showFloor = makePicker(
 );
 setFloor(FLOOR);
 showFloor(FLOOR);
+
+// On phones and tablets the main pointer is a finger: say the game needs a keyboard. A tablet
+// with a keyboard sees it until the first key press.
+const keyboardHint = document.querySelector<HTMLParagraphElement>('#keyboard-hint')!;
+keyboardHint.textContent = KEYBOARD_HINT;
+keyboardHint.hidden = !matchMedia('(pointer: coarse)').matches;
+window.addEventListener('keydown', () => (keyboardHint.hidden = true), { once: true });
 
 const DEBUG_KEY = 'Backquote'; // the key left of 1 (§ on Swiss keyboards)
 initInput([...PLAYERS.flatMap((p) => Object.values(p.controls)), DEBUG_KEY]);

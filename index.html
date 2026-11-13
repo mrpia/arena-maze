@@ -30,10 +30,20 @@
         background: rgba(20, 24, 34, 0.92); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
       }
       .picker[hidden] { display: none; }
+      /* On phones and tablets: in the middle, clear of the buttons on the left (up to 68 px). */
+      #keyboard-hint {
+        position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        width: max-content; max-width: calc(100vw - 2 * 80px); box-sizing: border-box;
+        margin: 0; padding: 10px 16px; border-radius: 12px;
+        text-align: center; color: #fff; background: rgba(20, 24, 34, 0.92);
+        font: bold 22px system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+      }
+      #keyboard-hint[hidden] { display: none; }
     </style>
   </head>
   <body>
     <canvas id="game"></canvas>
+    <p id="keyboard-hint" hidden></p>
     <div id="side-controls">
       <div id="view-control" class="picker-control">
         <button class="emoji-button number-button wide-button" type="button"></button>

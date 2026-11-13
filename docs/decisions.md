@@ -78,4 +78,21 @@ race game went to [arena-race](https://github.com/mrpia/arena-race).
   `.firebaserc` maps to `arena-maze`, so a deploy can't land on math-quizz. Same cache
   headers: `assets/**` immutable, `/` and `/index.html` `no-cache`.
 - Deploys are manual with `npm run ship`. No deploy on push.
-- The custom domain comes in the next step.
+- The custom domain comes in a later step.
+
+## 6. A keyboard hint on phones and tablets
+
+**Asked (by the adult):** the same hint as arena-race, for visitors on phones or tablets who
+can open the online game but can't play.
+
+- "⌨️ You need a keyboard to play." in `KEYBOARD_HINT`, so the kids can reword it. English,
+  like every other text in this game; arena-race's hint is German because its texts are.
+- It shows where the main pointer is a finger (the CSS media feature `pointer: coarse`), so
+  computers with a mouse or trackpad never see it. A tablet with a keyboard sees it until the
+  first key press; then it's gone until the page is reloaded. Same rule as arena-race.
+- This game has no start buttons to put it next to, so it's a box in the middle of the
+  screen, over the game. It keeps 80 px from both sides, clear of the buttons on the left.
+- Checked with touch emulation: hidden at 1280×800 with a mouse; shown at 390 px (three lines,
+  x 80 to 310) and at 1024 px (one line); gone after a key press.
+- Not chosen: touch controls. That's a game feature, for the kids to decide (`touch-controls`
+  in the backlog).

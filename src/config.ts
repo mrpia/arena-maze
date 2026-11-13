@@ -114,6 +114,10 @@ export const COLORS = {
   text: '#ffffff',
 };
 
+// Shown in the middle of the screen on phones and tablets (where you tap instead of using a
+// mouse), until the first key press.
+export const KEYBOARD_HINT = '⌨️ You need a keyboard to play.';
+
 // Floors for the floor picker under the 2D/3D button, in the order it shows them.
 // Floors are only paint: players can walk anywhere. Sizes are in world units.
 // Each floor dresses the monsters in a costume: monsterColor is mixed into their body color

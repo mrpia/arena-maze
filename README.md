@@ -49,6 +49,9 @@ knight jumps on the chess board, and more.
 Each round both players get a new animal at random (`PLAYER_LOOKS`); the colors stay, so
 you can tell them apart. The 🔊 button turns the sound effects off.
 
+On phones and tablets a box in the middle says you need a keyboard (`KEYBOARD_HINT` in
+`config.ts`); it goes away at the first key press.
+
 Press the key left of `1` (`§` on Swiss keyboards, `` ` `` on US ones) to show which
 keys are held. Use it to check that your keyboard registers both players at once:
 many laptop keyboards drop keys when several are held.
